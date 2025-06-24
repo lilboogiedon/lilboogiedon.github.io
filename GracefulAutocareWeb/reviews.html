@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graceful Auto Care reviews</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1 class="navbar-title">Graceful Auto Care reviews Reviews</h1>
+  </nav>
+  <main class="reviews-container">
+    <div class="star-rating" aria-label="5 out of 5 stars">
+    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+    <h2>What Our Customers Are Saying</h2>
+    <p class="intro-text">Real feedback from drivers who trust Graceful Auto Care to keep their vehicles looking flawless.</p>
+
+    <section class="reviews-list">
+      <article class="review-card">
+        <p class="review-text">"Graceful Auto Care transformed my car! The convenience of mobile service combined with their attention to detail is unmatched. Highly recommend!"</p>
+        <p class="review-author">– Sarah M., Augusta, GA</p>
+      </article>
+      <article class="review-card">
+        <p class="review-text">"Professional, punctual, and thorough. My car looks better than the day I bought it. Booking was easy, and the team was friendly."</p>
+        <p class="review-author">– James L., Evans, GA</p>
+      </article>
+      <article class="review-card">
+        <p class="review-text">"Exceptional service and the glow on my car lasted weeks! The mobile detailing saved me so much time. Will definitely use again."</p>
+        <p class="review-author">– Monica T., North Augusta</p>
+      </article>
+      <article class="review-card">
+        <p class="review-text">"Graceful Auto Care's attention to detail is incredible. They took care of everything inside and out, all while I was at work. So convenient!"</p>
+        <p class="review-author">– Kevin R., Augusta, GA</p>
+      </article>
+    </section>
+    <article class="review-card">
+  <p class="review-text">"Graceful Auto Care transformed my car! The convenience of mobile service combined with their attention to detail is unmatched. Highly recommend!"</p>
+  </div>
+  <p class="review-author">– Sarah M., Augusta, GA</p>
+</article>
+
+
+    <div class="button-group">
+      <a href="booking.html" class="glow-button">Book Your Detail Now!</a>
+      <a href="gallery.html" class="glow-button">View Our Gallery</a>
+      <a href="services.html" class="glow-button">Check Out Our Services</a>
+    </div>
+  </main>
+
+<!-- Navigation -->
+  <nav class="navbar">
+    <button class="navbar-burger" aria-label="Toggle menu">
+      <i data-lucide="menu" class="burger-icon"></i>
+    </button>
+    <h1 class="navbar-title">Graceful Auto Care reviews</h1>
+  </nav>
+
+  <div class="navbar-overlay"></div>
+
+  <aside class="navbar-menu">
+    <button class="navbar-close" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <a href="index.html"><i data-lucide="home"></i> Home</a>
+    <a href="services.html"><i data-lucide="car"></i> Services</a>
+    <a href="booking.html"><i data-lucide="calendar"></i> Schedule Appointment</a>
+    <a href="gallery.html"><i data-lucide="image"></i> Gallery</a>
+    <a href="reviews.html"><i data-lucide="tag"></i> Customer Reviews</a>
+    <a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
+  </aside>
+
+  *<!-- Burger Menu Script -->
+    <script>
+        lucide.createIcons();
+    
+        const burger = document.querySelector('.navbar-burger');
+        const closeBtn = document.querySelector('.navbar-close');
+        const overlay = document.querySelector('.navbar-overlay');
+        const body = document.body;
+        const menuLinks = document.querySelectorAll('.navbar-menu a');
+    
+        const openMenu = () => {
+        body.classList.add('open');
+        menuLinks.forEach((link, i) => {
+            link.style.animation = `slideIn 0.4s ease ${i * 0.1 + 0.3}s forwards`;
+        });
+        };
+    
+        const closeMenu = () => {
+        body.classList.remove('open');
+        menuLinks.forEach(link => {
+            link.style.animation = 'none';
+        });
+        };
+    
+        burger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    </script>
+</html>

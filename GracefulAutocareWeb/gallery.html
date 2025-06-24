@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graceful Auto Care</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body>
+
+ <!-- Navigation -->
+  <nav class="navbar">
+    <button class="navbar-burger" aria-label="Toggle menu">
+      <i data-lucide="menu" class="burger-icon"></i>
+    </button>
+    <h1 class="navbar-title">Graceful Auto Care gallery</h1>
+  </nav>
+
+  <div class="navbar-overlay"></div>
+
+  <aside class="navbar-menu">
+    <button class="navbar-close" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <a href="index.html"><i data-lucide="home"></i> Home</a>
+    <a href="services.html"><i data-lucide="car"></i> Services</a>
+    <a href="booking.html"><i data-lucide="calendar"></i> Schedule Appointment</a>
+    <a href="gallery.html"><i data-lucide="image"></i> Gallery</a>
+    <a href="reviews.html"><i data-lucide="tag"></i> Customer Reviews</a>
+    <a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
+  </aside>
+
+  <!-- Styles for the gallery -->
+  <main class="gallery-container">
+    <h2>Our Work — Mobile Detailing Gallery</h2>
+    <p class="intro-text">See the transformation we bring to every vehicle. Experience the Graceful Auto Care shine!</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="cleanbmw.png" alt="Detailed car exterior" /></div>
+      <div class="gallery-item"><img src="Caddy clean outside.png" alt="Car interior spotless finish" /></div>
+      <div class="gallery-item"><img src="Before and after a inside.png" alt="High-end shine on a luxury vehicle" /></div>
+      <div class="gallery-item"><img src="Clean yellow vet.png" alt="Mobile auto detailing in action" /></div>
+      <div class="gallery-item"><img src="Before and after x2.png" alt="Polished wheels and rims" /></div>
+      <div class="gallery-item"><img src="Motorcycle.png" alt="Spotless engine bay detail" /></div>
+      <div class="gallery-item"><img src="Deep wheel cleaning.png" alt="Detailed car interior" /></div>
+      <div class="gallery-item"><img src="Badge detailing on side.png" alt="Luxury car interior detail" /></div>
+      <div class="gallery-item"><img src="Foam covered srt .png" alt="Detailed car seats and dashboard" /></div>
+      <div class="gallery-item"><img src="Supra inside .png" alt="Detailed car floor mats" /></div>
+      <div class="gallery-item"><img src="Foam dripping srt .png" alt="Detailed car interior" /></div>
+      <div class="gallery-item"><img src="Black hellcat.png" alt="Detailed car exterior" /></div>
+      <div class="gallery-item"><img src="Detail brush hood of car.png" alt="Detailed car wheels" /></div>
+      <div class="gallery-item"><img src="Scatsoap.png" alt="Detailed car engine bay" /></div>
+    
+    <div class="button-group">
+      <a href="booking.html" class="glow-button">Book Your Detail Now!</a>
+      <a href="services.html" class="glow-button">Check Out Our Services</a>
+    </div>
+  </main>
+<!-- Burger Menu Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      const burger = document.querySelector('.navbar-burger');
+      const closeBtn = document.querySelector('.navbar-close');
+      const overlay = document.querySelector('.navbar-overlay');
+      const body = document.body;
+
+      burger?.addEventListener('click', () => {
+        body.classList.add('open');
+        document.querySelectorAll('.navbar-menu a').forEach((link, i) => {
+          link.style.animation = `slideIn 0.4s ease ${i * 0.1 + 0.3}s forwards`;
+        });
+      });
+
+      const closeMenu = () => {
+        body.classList.remove('open');
+        document.querySelectorAll('.navbar-menu a').forEach(link => {
+          link.style.animation = 'none';
+        });
+      };
+
+      closeBtn?.addEventListener('click', closeMenu);
+      overlay?.addEventListener('click', closeMenu);
+    });
+  </script>
+
+</body>
+</html>

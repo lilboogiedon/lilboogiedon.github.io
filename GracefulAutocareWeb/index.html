@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graceful Auto Care</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #D2D2D2;
+      background-image:
+        repeating-linear-gradient(to right, transparent 0 100px, #25283b22 100px 101px),
+        repeating-linear-gradient(to bottom, transparent 0 100px, #25283b22 100px 101px);
+    }
+    body::before {
+      position: absolute;
+      width: min(1400px, 90vw);
+      top: 10%;
+      left: 50%;
+      height: 90%;
+      transform: translateX(-50%);
+      content: '';
+      background-image: url(images/bg.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <button class="navbar-burger" aria-label="Toggle menu">
+      <i data-lucide="menu" class="burger-icon"></i>
+    </button>
+    <h1 class="navbar-title">Graceful Auto Care</h1>
+  </nav>
+
+  <div class="navbar-overlay"></div>
+
+  <aside class="navbar-menu">
+    <button class="navbar-close" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <a href="index.html"><i data-lucide="home"></i> Home</a>
+    <a href="services.html"><i data-lucide="car"></i> Services</a>
+    <a href="booking.html"><i data-lucide="calendar"></i> Schedule Appointment</a>
+    <a href="gallery.html"><i data-lucide="image"></i> Gallery</a>
+    <a href="reviews.html"><i data-lucide="tag"></i> Customer Reviews</a>
+    <a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
+  </aside>
+
+  <!-- Main Banner Section -->
+  <div class="banner">
+    <!-- 3D Carousel -->
+    <div class="slider" style="--quantity: 10">
+      <div class="item" style="--position: 1"><img src="Badge detailing on side.png" alt=""></div>
+      <div class="item" style="--position: 2"><img src="Black hellcat.png" alt=""></div>
+      <div class="item" style="--position: 3"><img src="Detail brush hood of car.png" alt=""></div>
+      <div class="item" style="--position: 4"><img src="Foam dripping srt .png" alt=""></div>
+      <div class="item" style="--position: 5"><img src="Deep wheel cleaning.png" alt=""></div>
+      <div class="item" style="--position: 6"><img src="Foam covered srt .png" alt=""></div>
+      <div class="item" style="--position: 7"><img src="Scatsoap.png" alt=""></div>
+      <div class="item" style="--position: 8"><img src="Supra inside .png" alt=""></div>
+      <div class="item" style="--position: 9"><img src="Supra outside .png" alt=""></div>
+      <div class="item" style="--position: 10"><img src="logo.mockup.png" alt=""></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="inner-content">
+        <h1 class="logo-heading">
+          <img src="dark.logo.png" alt="Graceful Auto Care Logo" class="logo" />
+        </h1>
+        <div class="author">
+         <h2>Graceful Auto Care | Mobile Auto Detailing in Augusta, GA</h2>
+<p><strong>Mobile Auto Detailing · High-End Finish · Convenient Service</strong></p>
+<p>
+  Graceful Auto Care offers professional <strong>mobile auto detailing</strong> services in <strong>Augusta, GA</strong>. We bring expert car care directly to your home or workplace, saving you time while delivering a flawless, high-end finish.
+</p>
+<p>
+  Our comprehensive services include exterior washes, interior deep cleaning, and paint protection — all customized to meet your vehicle’s specific needs and your busy schedule.
+</p>
+<p>
+  Trusted by countless satisfied customers, Graceful Auto Care provides reliable, convenient, and premium auto detailing solutions that keep your car looking its best.
+</p>
+<p><strong>Book your mobile auto detailing appointment today and experience the Graceful difference in Augusta!</strong></p> 
+
+          <div class="button-group">
+            <a href="booking.html" class="glow-button">Book your detail now!</a>
+            <a href="services.html" class="glow-button">Check out our services</a>
+            <a href="gallery.html" class="glow-button">View our gallery</a>
+            <a href="reviews.html" class="glow-button">Read customer reviews</a>
+            <a href="contact.html" class="glow-button">Contact us</a>
+          </div>
+
+        </div>
+      </div>
+      <div class="model"></div>
+    </div>
+  </div>
+
+  <!-- Burger Menu Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      const burger = document.querySelector('.navbar-burger');
+      const closeBtn = document.querySelector('.navbar-close');
+      const overlay = document.querySelector('.navbar-overlay');
+      const body = document.body;
+
+      burger?.addEventListener('click', () => {
+        body.classList.add('open');
+        document.querySelectorAll('.navbar-menu a').forEach((link, i) => {
+          link.style.animation = `slideIn 0.4s ease ${i * 0.1 + 0.3}s forwards`;
+        });
+      });
+
+      const closeMenu = () => {
+        body.classList.remove('open');
+        document.querySelectorAll('.navbar-menu a').forEach(link => {
+          link.style.animation = 'none';
+        });
+      };
+
+      closeBtn?.addEventListener('click', closeMenu);
+      overlay?.addEventListener('click', closeMenu);
+    });
+  </script>
+
+</body>
+</html>

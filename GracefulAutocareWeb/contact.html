@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Graceful Auto Care</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="navbar-title">Graceful Auto Care</h1>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p class="subtitle">Let us bring the shine to you — book, ask questions, or get a quote today!</p>
+
+      <form class="contact-form" action="mailto:your@email.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Your Phone (optional)" />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="glow-button">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:support@gracefulautocare.com">support@gracefulautocare.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+17065551234">(706) 555-1234</a></p>
+        <p><strong>Service Area:</strong> Augusta, GA & surrounding areas</p>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+          <i data-lucide="instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/yourhandle" target="_blank" aria-label="Facebook">
+          <i data-lucide="facebook"></i>
+        </a>
+        <a href="https://www.tiktok.com/@yourhandle" target="_blank" aria-label="TikTok">
+          <i data-lucide="music"></i>
+        </a>
+        <a href="sms:+17065551234" aria-label="Text Message">
+          <i data-lucide="message-circle"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+
+<!-- Navigation -->
+  <nav class="navbar">
+    <button class="navbar-burger" aria-label="Toggle menu">
+      <i data-lucide="menu" class="burger-icon"></i>
+    </button>
+    <h1 class="navbar-title">Graceful Auto Care reviews</h1>
+  </nav>
+
+  <div class="navbar-overlay"></div>
+
+  <aside class="navbar-menu">
+    <button class="navbar-close" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <a href="index.html"><i data-lucide="home"></i> Home</a>
+    <a href="services.html"><i data-lucide="car"></i> Services</a>
+    <a href="booking.html"><i data-lucide="calendar"></i> Schedule Appointment</a>
+    <a href="gallery.html"><i data-lucide="image"></i> Gallery</a>
+    <a href="reviews.html"><i data-lucide="tag"></i> Customer Reviews</a>
+    <a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
+  </aside>
+
+  *<!-- Burger Menu Script -->
+    <script>
+        lucide.createIcons();
+    
+        const burger = document.querySelector('.navbar-burger');
+        const closeBtn = document.querySelector('.navbar-close');
+        const overlay = document.querySelector('.navbar-overlay');
+        const body = document.body;
+        const menuLinks = document.querySelectorAll('.navbar-menu a');
+    
+        const openMenu = () => {
+        body.classList.add('open');
+        menuLinks.forEach((link, i) => {
+            link.style.animation = `slideIn 0.4s ease ${i * 0.1 + 0.3}s forwards`;
+        });
+        };
+    
+        const closeMenu = () => {
+        body.classList.remove('open');
+        menuLinks.forEach(link => {
+            link.style.animation = 'none';
+        });
+        };
+    
+        burger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    </script>
+</html>
+
+</body>
